@@ -1,7 +1,4 @@
-/* Globale stijlen */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-
 *,
 *::before,
 *::after {
@@ -32,7 +29,8 @@ ul {
 img {
     width: 100%;
 }
-
+/* Globale stijlen */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 
 #particles-js {
@@ -128,67 +126,82 @@ nav {
         margin-right: 20px;
     }
 }
+.container {
+    position: relative;
+    z-index: 5;
+    max-width: 92rem;
+    padding: 0 4rem;
+    margin: 0 auto;
+}
 
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
 
 /* Header */
 header {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    text-align: left; 
-    padding: 20vh 10%; 
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    width: 100%;
+    background-color: var(--light-one);
+    overflow: hidden;
     position: relative;
-    color: white;
 }
 
-
-.highlight {
-    color: #ff9900; 
+.section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-.btn {
+.title {
+    position: relative;
     display: inline-block;
-    padding: 5px 18px;
-    background-color: #302598; 
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 60px;
-    transition: background-color 0.3s ease; 
-}
-
-.btn:hover {
-    background-color: #160c6f; 
-}
-
-  
-/* ... (bestaande stijlen) ... */
-
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-}
-
-.header-text {
-    flex: 1; 
-    padding-right: 20px; 
-}
-
-.header-circle img {
-    max-width: 40%; 
-    max-height: 40%; 
-    object-fit: cover;
-    border-radius: 10%;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 2.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .letters {
+    position: absolute;
+    width: 13.5%;
+    top: -5px;
+    left: 15px;
+    opacity: 0.06;
 }
 
 
-/* ... (bestaande stijlen) ... */
+.header-content .container.grid-2 {
+    grid-template-columns: 2.5fr 3.5fr;
+    min-height: calc(100vh - 6rem);
+    padding-bottom: 2.5rem;
+    text-align: left;
+}
+
+.header-title {
+    font-size: 3.8rem;
+    line-height: 0.8;
+    color: var(--dark-one);
+}
+
+.header-content .text {
+    margin: 2.15rem 0;
+}
 
 
-/* Voeg hier meer stijlen toe voor specifieke elementen en aanpassingen naar wens */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
