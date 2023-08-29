@@ -1,0 +1,169 @@
+/* Globale stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Navigatiemenu */
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Rest van de CSS-stijlen... */
+
+
+.logo img {
+    max-width: 100px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Voeg een subtiele schaduw toe */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
+    }
+
+    .menu a:hover {
+        color: #ff9900; /* Verander de kleur bij hover */
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 20px;
+    }
+}
+
+
+/* Header */
+header {
+    text-align: left;
+    padding: 100px;
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    position: fixed;
+}
+
+.highlight {
+    color: #ff9900; 
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 18px;
+    background-color: #000000; 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 60px;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background-color: #dddddc; 
+}
+
+  
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.header-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+/* ... (bestaande stijlen) ... */
+
+.header-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.header-circle img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%; 
+}
+
+
+
+
+
+/* Sectie voor projecten */
+
+
+/* Voeg hier meer stijlen toe voor specifieke elementen en aanpassingen naar wens */
