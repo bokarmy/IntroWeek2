@@ -11,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
 }
 
 body,
@@ -59,7 +59,7 @@ nav {
 
 .logo img {
     max-width: 100px;
-    -webkit-filter: invert(100%); 
+    -webkit-filter: invert(100%); /* Safari/Chrome */
     filter: invert(100%);
 }
 
@@ -110,7 +110,7 @@ nav {
     }
 
     .menu li {
-        margin: 00;
+        margin: 0;
         padding: 10px 0;
     }
 
@@ -131,70 +131,97 @@ nav {
         margin-right: 20px;
     }
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 
-
-/* Header */
-header {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    text-align: left; 
-    padding: 20vh 10%; 
+.contact {
+    margin-right: 20px;
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    position: relative;
-    color: white;
+    font-size: 1.8rem;
+}
+.subtext {
+    text-align: center;
+    margin-right: 18%;
+    margin-top: 10px;
 }
 
-
-.highlight {
-    color: #ff9900; 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn {
-    display: inline-block;
-    padding: 5px 18px;
-    background-color: #302598; 
-    color: white;
-    text-decoration: none;
+.form {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.form label,
+.form input,
+.form textarea {
+    display: block;
+    margin-bottom: -15px; /* Maak de afstand tussen labels en input/textarea kleiner */
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 60px;
-    transition: background-color 0.3s ease; 
+    cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #160c6f; 
+.form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Stapel de elementen op elkaar */
+        height: auto; /* Laat de container zich aanpassen aan de inhoud */
+    }
+
+    .contact {
+        margin: 0; /* Verwijder de rechtermarge */
+        text-align: center; /* Centreer de tekst */
+        font-size: 1.5rem; /* Pas de tekstgrootte aan */
+    }
+
+    .subtext {
+        margin: 10px 0; /* Pas de marges aan voor de subtekst */
+    }
+
+    .form {
+        width: 100%; /* Maak het formulier volledig breed */
+    }
+}
+.email {
+    text-align: center;
+    margin-right: 10vh;
+    font-size: 0.8rem; /* Pas de tekstgrootte aan */
+    margin-top: 10px; /* Voeg wat ruimte toe boven de e-mail */
 }
 
-  
-/* ... (bestaande stijlen) ... */
+@media (max-width: 767px) {
+    /* Media query stijlen voor kleinere schermen */
+    .subtext {
+        font-size: 1rem; /* Pas de tekstgrootte aan */
+    }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
+    .email {
+        font-size: 0.7rem; /* Pas de tekstgrootte aan */
+    }
 }
-
-.header-text {
-    flex: 1; 
-    padding-right: 20px; 
-    
-}
-
-
-.header-circle img {
-    max-width: 40%; 
-    max-height: 40%; 
-    object-fit: cover;
-    border-radius: 10%;
-}
-
-
-
-/* ... (bestaande stijlen) ... */
-
-
-/* Voeg hier meer stijlen toe voor specifieke elementen en aanpassingen naar wens */

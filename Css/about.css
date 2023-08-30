@@ -16,6 +16,7 @@ button,
 input,
 textarea {
     font-family: "Poppins", sans-serif;
+    overflow: hidden;
 }
 
 a {
@@ -47,7 +48,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    padding: 20px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -56,6 +57,8 @@ nav {
 
 .logo img {
     max-width: 100px;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
 }
 
 .menu-toggle {
@@ -92,7 +95,7 @@ nav {
         flex-direction: column;
         background-color: #424141;
         position: absolute;
-        top: 60px;
+        top: 80px;
         right: 0;
         width: 100%;
         text-align: center;
@@ -110,7 +113,7 @@ nav {
     }
 
     .menu a {
-        color: white;
+        color: rgb(255, 255, 255);
         text-decoration: none;
         transition: color 0.3s ease; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
     }
@@ -128,7 +131,6 @@ nav {
 }
 .container {
     position: relative;
-    z-index: 5;
     max-width: 92rem;
     padding: 0 4rem;
     margin: 0 auto;
@@ -179,13 +181,25 @@ header {
 }
 
 .header-title {
-    font-size: 3.8rem;
+    font-size: 3.6rem;
     line-height: 0.8;
     color: var(--dark-one);
 }
 
 .header-content .text {
     margin: 2.15rem 0;
+}
+.img-person1 {
+    width: 75%;
+    border-radius: 15px;
+}
+.column-2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 8vh;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 60%;
 }
 
 
