@@ -11,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: auto;
+    
 }
 
 body,
@@ -19,7 +19,7 @@ button,
 input,
 textarea {
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+   
 }
 
 a {
@@ -191,7 +191,111 @@ header {
     object-fit: cover;
     border-radius: 10%;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh;
+    margin-top: 60px;
+    padding: 80px; /* Voeg wat ruimte toe rondom de inhoud */
+    
+}
 
+.grid-2 {
+    display: flex; /* Gebruik flexbox voor de kolommen */
+    justify-content: space-between; /* Verdeel de ruimte tussen kolommen */
+    align-items: center;
+    flex-wrap: wrap; /* Laat de kolommen naar de volgende regel gaan als dat nodig is */
+}
+
+.column-1 {
+    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+    max-width: 800px;
+    margin-right: 200px; /* Voeg wat ruimte tussen de kolommen toe */
+}
+
+.column-2 {
+    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+    max-width: 420px; /* Pas aan naar je voorkeur */
+}
+
+.img-person1 {
+    max-width: 70%;
+    height: 350px;
+    border-radius: 90%;
+    margin-right: 30;
+}
+.grid-2 .column-1 {
+    @media (max-width: 768px) {
+        flex: 100%; /* Maak de eerste kolom volledige breedte op kleinere schermen */
+        max-width: 100%; /* Maak de kolommen volledige breedte op kleinere schermen */
+        margin: 0; /* Verwijder marges om ruimte te besparen */
+        text-align: center; /* Centreer de tekst op kleinere schermen */
+    }
+}
+/* Voeg deze stijlen toe aan je bestaande CSS of pas ze aan */
+.projects-section {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+    height: 100vh;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 300px; /* Aangepaste breedte */
+    height: 400px; /* Aangepaste hoogte */
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.project h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 15px;
+}
+
+.project a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project a:hover {
+    background-color: #555;
+}
 
 
 /* ... (bestaande stijlen) ... */
