@@ -183,6 +183,9 @@ header {
     padding-right: 20px; 
     
 }
+#header-title{
+    font-size: 3.6rem;
+}
 
 
 .header-circle img {
@@ -190,6 +193,7 @@ header {
     max-height: 40%; 
     object-fit: cover;
     border-radius: 10%;
+
 }
 .container {
     display: flex;
@@ -216,17 +220,19 @@ header {
 
 .column-2 {
     flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
-    max-width: 420px; /* Pas aan naar je voorkeur */
+    max-width: 520px; /* Pas aan naar je voorkeur */
+    margin-right: 15% ;
+    margin-top: 5%;
 }
 
 .img-person1 {
     max-width: 70%;
     height: 350px;
     border-radius: 90%;
-    margin-right: 30;
+    margin-right: 30%;
 }
 .grid-2 .column-1 {
-    @media (max-width: 768px) {
+    @media (max-width: 808px) {
         flex: 100%; /* Maak de eerste kolom volledige breedte op kleinere schermen */
         max-width: 100%; /* Maak de kolommen volledige breedte op kleinere schermen */
         margin: 0; /* Verwijder marges om ruimte te besparen */
@@ -234,15 +240,15 @@ header {
     }
 }
 /* Voeg deze stijlen toe aan je bestaande CSS of pas ze aan */
-.projects-section {
-    padding: 50px 0;
+#projects-section {
+    padding: 180px 0;
     background-color: #f5f5f5;
     text-align: center;
     height: 100vh;
 }
 
 .section-title {
-    font-size: 24px;
+    font-size: 3.6rem;
     margin-bottom: 30px;
 }
 
@@ -252,10 +258,8 @@ header {
     align-items: flex-start;
     flex-wrap: wrap;
 }
-
 .project {
-    width: 300px; /* Aangepaste breedte */
-    height: 400px; /* Aangepaste hoogte */
+    width: 300px;
     margin: 20px;
     background-color: #fff;
     border-radius: 15px;
@@ -265,13 +269,13 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden; /* Voeg overflow toe om tekst binnen de div te houden */
 }
-
 
 .project img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .project h3 {
@@ -281,6 +285,7 @@ header {
 
 .project p {
     margin-bottom: 15px;
+    flex-grow: 1; /* Laat de tekst het beschikbare verticale ruimte innemen */
 }
 
 .project a {
@@ -291,12 +296,13 @@ header {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    width: 100%;
 }
+
 
 .project a:hover {
     background-color: #555;
 }
-
 
 /* ... (bestaande stijlen) ... */
 

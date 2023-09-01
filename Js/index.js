@@ -113,3 +113,25 @@ const menuToggle = document.querySelector(".menu-toggle");
         },
         "retina_detect": true
       });
+     
+    // Haal een lijst op van alle ankerelementen in het navigatiemenu
+    const navLinks = document.querySelectorAll('.menu a');
+
+    // Voeg een click-eventlistener toe aan elk ankerelement
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Voorkom standaardgedrag van de link
+
+            // Haal de doelsectie op waar je naartoe wilt scrollen (op basis van de 'href' van het ankerelement)
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            // Scroll naar de doelsectie met een soepele animatie
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80, // Aanpassen aan je ontwerp
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
