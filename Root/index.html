@@ -42,7 +42,7 @@
                 <h1>Hi There,</h1>
                 <p>I'm Osman Karapinar. I am a student at the Graphic Lyceum Rotterdam. I'm doing the  <span class="highlight">Software Development </span> Course !</p>
                 <br>
-                <a href="../Pages/about.html" class="btn">About Me ⬇️</a>
+                <a href="#header-title" class="btn">About Me ⬇️</a>
             </div>
             <div class="header-circle">
                 <img src="../Images/osman.png" alt="Your Photo">
@@ -51,21 +51,33 @@
     </header>
        <br>
       
-    <div class="container grid-2">
-                <div class="column-1">
-                   
-                    <h1 id="header-title">About me</h1>
-                    <br>
-                    <p class="text">
-                        I am an 17 year old developer from the Netherlands. I've been developing for about 1 to 2
-                        years. I go to school in Rotterdam and follow the software
-                        development course at the graphic lyceum Rotterdam.<br><br>In my spare time, I enjoy playing football with my friends. I consider myself a dedicated team player.  I'm a gaming enthusiast who absolutely loves diving into the intricate tactical world of Rainbow Six Siege. Breaching, defending, strategizing – every moment in the game gets my adrenaline pumping and my mind racing.
-                    </p>
-                </div>
-                <div class="column-2">
-                    <img class="img-person1" src="../Images/hobby.png" alt="Your Photo">
-                </div>
+       <div class="container grid-2">
+        <div class="column-1">
+            <h1 id="header-title">About me</h1>
+            <br>
+            <p class="text">
+                I am an 17 year old developer from the Netherlands. I've been developing for about 1 to 2
+                years. I go to school in Rotterdam and follow the software
+                development course at the graphic lyceum Rotterdam.<br><br>In my spare time, I enjoy playing football with my friends. I consider myself a dedicated team player.  I'm a gaming enthusiast who absolutely loves diving into the intricate tactical world of Rainbow Six Siege. Breaching, defending, strategizing!
+
+            </p>
+    
+            <!-- Hier voegen we de vaardigheden toe -->
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>C#</li>
+                </ul>
             </div>
+        </div>
+        <div class="column-2">
+            <img class="img-person1" src="../Images/hobby.png" alt="Your Photo">
+        </div>
+    </div>
   
            
            
@@ -77,33 +89,34 @@
                         <img class="project-1-foto" src="../Images/f1.png" alt="Project 1">
                         <h3>Project 1</h3>
                         <p>Formule 1 project die ik alleen heb gebouwd. We moesten een onderwerp kiezen en daarvoor een website bouwen en ik had gekozen voor forumle 1.</p>
-                        <a href="https://88885.stu.sd-lab.nl/beroepsdutchgp/index.html">Visit Project</a>
+                        <a href="https://88885.stu.sd-lab.nl/beroepsdutchgp/index.html" target="_blank">Visit Project</a>
                     </div>
 
                     <div class="project">
                         <img class="project-2-foto" src="../Images/mazu.png" alt="Project 2">
                         <h3>Project 2</h3>
                         <p>Restaurant project samen met teamleden. We moesten een website bouwen voor een restaurant!</p>
-                        <a href="https://rickbaas.nl/subpages/school/mazu/">Visit Project</a>
+                        <a href="https://rickbaas.nl/subpages/school/mazu/" target="_blank">Visit Project</a>
                     </div>
 
                     <div class="project">
                         <img class="project-3-foto" src="../Images/villa.png" alt="Project 3">
                         <h3>Project 3</h3>
                         <p>Villa project samen met teamleden. We moesten een website bouwen waarbij je villa's kon kopen/bieden!</p>
-                        <a href="https://88885.stu.sd-lab.nl/VillaTeKoop/index.html">Visit Project</a>
+                        <a href="https://88885.stu.sd-lab.nl/VillaTeKoop/index.html" target="_blank">Visit Project</a>
                     </div>
 
                     <div class="project">
                         <img class="project-4-foto" src="../Images/project4.png" alt="Project 4">
                         <h3>Project 4</h3>
                         <p>Description of Project 4.</p>
-                        <a href="#">Visit Project</a>
+                        <a href="#" target="_blank">Visit Project</a>
                     </div>
                 </div>
             </section>
             
- <?php
+
+            <!-- <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $name = $_POST["name"];
                 $email = $_POST["email"];
@@ -118,47 +131,62 @@
                 $body .= "Telefoonnummer: $phone\n";
                 $body .= "Bedrijfsnaam: $company\n";
                 $body .= "Bericht:\n$message";
-                
                 // Stuur de e-mail
-                mail($to, $subject, $body);
-                
-                // Toon een succesbericht
-                echo "<p>Bedankt! Je formulier is succesvol ingediend.</p>";
-            }
-            ?>
+                if (mail($to, $subject, $body)) {
+                    // Toon een succesbericht
+                    echo "<p>Bedankt! Je formulier is succesvol ingediend.</p>";
+        
+                    // Stuur de gebruiker naar de homepage
+        header("Location: index.php"); // Vervang 'index.php' door de URL van je homepage
+        exit; // Stop met de verdere uitvoering van de script
+    } else {
+        echo "<p>Er is een fout opgetreden bij het verzenden van het formulier.</p>";
+    }
+}
+            ?>-->
             
             <div class="cont">
-                <div class="contact">
+                <div id="contact">
                     <h1>Contact Me !</h1>
-                    <p class="subtext">Let's create something together 🤙
-                        <p class="email">📧 My Email: osmankarapinar68@gmail.com</p>
-                        <p><a href="OsmanKarapinar.pdf" download>Here my CV (PDF)</a></p>
-                    </p>
-                   
+                    <p class="subtext">Let's create something together 🤙</p>
+                    <p class="email">📧 My Email: osmankarapinar68@gmail.com</p>
+                    <br>
+                    <p><a href="OsmanKarapinar.pdf" download>Download here my CV </a></p>
                 </div>
                 <div class="form-container">
                     <div class="form">
                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                            <label for="name">Name:</label><br>
-                            <input type="text" name="name" id="name" required><br>
-            
-                            <label for="email">Email:</label><br>
-                            <input type="email" name="email" id="email" required><br>
-            
-                            <label for="phone">(Optional) Phone Number:</label><br>
-                            <input type="tel" name="phone" id="phone"><br>
-            
-                            <label for="company">(Optional) Company Name:</label><br>
-                            <input type="text" name="company" id="company"><br>
-            
-                            <label for="message">Message:</label><br>
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" id="name" required>
+                    
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" required>
+                    
+                            <div class="phone-company">
+                                <div>
+                                    <label for="phone">(Optional) Phone Number:</label>
+                                    <input type="tel" name="phone" id="phone">
+                                </div>
+                                <div>
+                                    <label for="company">(Optional) Company Name:</label>
+                                    <input type="text" name="company" id="company">
+                                </div>
+                            </div>
+                    
+                            <label for="message">Message:</label>
                             <textarea name="message" id="message" rows="auto" required></textarea>
-            
+                    
                             <input class="active" type="submit" value="Submit">
                         </form>
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
             
 
    

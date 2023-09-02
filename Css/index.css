@@ -45,6 +45,8 @@ img {
 
 /* Navigatiemenu */
 nav {
+   
+    top: 0;
     background-color: #333;
     color: white;
     display: flex;
@@ -52,7 +54,9 @@ nav {
     align-items: center;
     padding: 20px;
     font-family: "Poppins", sans-serif;
+  
 }
+
 
 /* Rest van de CSS-stijlen... */
 
@@ -169,6 +173,7 @@ header {
   
 /* ... (bestaande stijlen) ... */
 
+/* Algemene stijlen voor de desktopweergave */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -181,20 +186,19 @@ header {
 .header-text {
     flex: 1; 
     padding-right: 20px; 
-    
-}
-#header-title{
-    font-size: 3.6rem;
 }
 
+#header-title {
+    font-size: 3.6rem;
+}
 
 .header-circle img {
     max-width: 40%; 
     max-height: 40%; 
     object-fit: cover;
     border-radius: 10%;
-
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -202,7 +206,6 @@ header {
     height: 125vh;
     margin-top: 60px;
     padding: 80px; /* Voeg wat ruimte toe rondom de inhoud */
-    
 }
 
 .grid-2 {
@@ -221,7 +224,7 @@ header {
 .column-2 {
     flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
     max-width: 520px; /* Pas aan naar je voorkeur */
-    margin-right: 15% ;
+    margin-right: 15%;
     margin-top: 5%;
 }
 
@@ -230,7 +233,40 @@ header {
     height: 350px;
     border-radius: 90%;
     margin-right: 30%;
+    margin-top: -55%;
+   
 }
+
+
+.skills {
+    margin-top: 30px;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333; /* Kleur voor de titel van de vaardigheden */
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #666; /* Kleur voor de vaardigheden */
+}
+
+.skills li::before {
+    content: "\2022"; /* Voeg een bullet-puntje (•) toe voor elk item */
+    color: #ff9900; /* Kleur voor de bullet-puntjes */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
 .grid-2 .column-1 {
     @media (max-width: 808px) {
         flex: 100%; /* Maak de eerste kolom volledige breedte op kleinere schermen */
@@ -239,6 +275,38 @@ header {
         text-align: center; /* Centreer de tekst op kleinere schermen */
     }
 }
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
+        height: auto; /* Verwijder de vaste hoogte om inhoud aan te passen */
+        margin-top: 20px; /* Verminder de bovenmarge */
+        padding: 20px; /* Verminder de padding rondom de inhoud */
+    }
+
+    .grid-2 {
+        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
+    }
+
+    .column-1, .column-2 {
+        flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+        max-width: 100%; /* Volledige breedte op kleinere schermen */
+        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
+        text-align: center; /* Centreer de tekst op kleinere schermen */
+    }
+
+    .img-person1 {
+        max-width: 0%; /* Volledige breedte op kleinere schermen */
+        height: auto; /* Behoud de beeldverhouding */
+        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
+    }
+
+    .skills {
+        margin-top: 20px; /* Voeg bovenmarge toe op kleinere schermen */
+    }
+}
+
 /* Voeg deze stijlen toe aan je bestaande CSS of pas ze aan */
 .projects-section {
     padding: 60px 0;
@@ -259,7 +327,7 @@ header {
 }
 
 .project {
-    width: 300px;
+    width: 250px; /* Pas de breedte aan naar je voorkeur */
     margin: 20px;
     background-color: #fff;
     border-radius: 15px;
@@ -271,6 +339,7 @@ header {
     justify-content: space-between;
     overflow: hidden;
 }
+
 
 .project img {
     max-width: 100%;
@@ -302,60 +371,69 @@ header {
 .project a:hover {
     background-color: #555;
 }
-
 .cont {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    justify-content: center; /* Plaats de inhoud in het midden van het scherm */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Wrap items als ze niet naast elkaar passen */
 }
 
-.contact {
-    width: 100%;
-    margin-bottom: 20px;
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
+#contact {
+    flex: 1;
+    max-width: 400px; /* Beperk de maximale breedte van de contactsectie */
+    text-align: center; /* Center de tekst in de contactsectie */
+    margin-bottom: 20px; /* Voeg wat ruimte onder de contactsectie toe */
+    margin-top: 200px; /* Voeg wat ruimte boven de contactsectie toe */
 }
 
-.subtext {
-    text-align: center;
-    margin-top: 10px;
-}
 
 .form-container {
-    width: 80%; /* Aangepaste breedte voor het formulier */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto; /* Horizontaal centreren */
+    flex: 1;
+    max-width: 400px;
+    margin-top: 50px;
+    margin-left: 80px; /* Beperk de maximale breedte van het formulier */
 }
 
 .form {
     background-color: #f4f4f4;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px; /* Verminder de padding om het formulier kleiner te maken */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* Maximale breedte voor het formulier */
-}
+    max-width: 400px; /* Beperk de maximale breedte van het formulier */
+    max-height: 500px; /* Beperk de maximale hoogte van het formulier */
+    }
 
-.form label,
-.form input,
-.form textarea {
-    display: block;
-    margin-bottom: 10px;
-}
 
-.form input,
-.form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    .form label,
+    .form input,
+    .form textarea {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .form .name-email,
+    .form .phone-company {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .form .name-email label,
+    .form .name-email input,
+    .form .phone-company label,
+    .form .phone-company input {
+        flex: 1;
+        margin: 0;
+    }
+    
+    .form input,
+    .form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
 
 .form input[type="submit"] {
     background-color: #007bff;
