@@ -1,3 +1,21 @@
+<?php
+$hostname = "localhost:3306";
+$username = "dbz88885";
+$password = "bokarmy6806";
+$database = "88885_database";
+
+// Maak een databaseverbinding
+$conn = new mysqli($hostname, $username, $password, $database);
+
+// Controleer de verbinding
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Haal projectinformatie op uit de database
+$sql = "SELECT * FROM portfolio";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +79,8 @@
                 development course at the graphic lyceum Rotterdam.<br><br>In my spare time, I enjoy playing football with my friends. I consider myself a dedicated team player.  I'm a gaming enthusiast who absolutely loves diving into the intricate tactical world of Rainbow Six Siege. Breaching, defending, strategizing!
 
             </p>
+            <br>
+            <p><a href="OsmanKarapinar.pdf" download>Download here my CV </a></p>
     
             <!-- Hier voegen we de vaardigheden toe -->
             <div class="skills">
@@ -84,34 +104,25 @@
             <section class="projects-section">
                 <h2 id="section-title">My Projects</h2>
                 <div class="projects-container">
-
-                    <div class="project">
-                        <img class="project-1-foto" src="../Images/f1.png" alt="Project 1">
-                        <h3>Project 1</h3>
-                        <p>Formule 1 project die ik alleen heb gebouwd. We moesten een onderwerp kiezen en daarvoor een website bouwen en ik had gekozen voor forumle 1.</p>
-                        <a href="https://88885.stu.sd-lab.nl/beroepsdutchgp/index.html" target="_blank">Visit Project</a>
-                    </div>
-
-                    <div class="project">
-                        <img class="project-2-foto" src="../Images/mazu.png" alt="Project 2">
-                        <h3>Project 2</h3>
-                        <p>Restaurant project samen met teamleden. We moesten een website bouwen voor een restaurant!</p>
-                        <a href="https://rickbaas.nl/subpages/school/mazu/" target="_blank">Visit Project</a>
-                    </div>
-
-                    <div class="project">
-                        <img class="project-3-foto" src="../Images/villa.png" alt="Project 3">
-                        <h3>Project 3</h3>
-                        <p>Villa project samen met teamleden. We moesten een website bouwen waarbij je villa's kon kopen/bieden!</p>
-                        <a href="https://88885.stu.sd-lab.nl/VillaTeKoop/index.html" target="_blank">Visit Project</a>
-                    </div>
-
-                    <div class="project">
-                        <img class="project-4-foto" src="../Images/project4.png" alt="Project 4">
-                        <h3>Project 4</h3>
-                        <p>Description of Project 4.</p>
-                        <a href="#" target="_blank">Visit Project</a>
-                    </div>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $projectTitle = $row["title"];
+                            $projectImage = $row["image_path"];
+                            $projectDescription = $row["description"];
+                            $projectLink = $row["link"];
+        
+                            echo '<div class="project">';
+                            echo '<img src="' . $projectImage . '" alt="' . $projectTitle . '">';
+                            echo '<h3>' . $projectTitle . '</h3>';
+                            echo '<p>' . $projectDescription . '</p>';
+                            echo '<a href="' . $projectLink . '" target="_blank">Visit Project</a>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "No projects found in the database.";
+                    }
+                    ?>
                 </div>
             </section>
             
@@ -147,11 +158,11 @@
             
             <div class="cont">
                 <div id="contact">
-                    <h1>Contact Me !</h1>
+                    <h1 class="txt1">Contact Me !</h1>
                     <p class="subtext">Let's create something together 🤙</p>
                     <p class="email">📧 My Email: osmankarapinar68@gmail.com</p>
                     <br>
-                    <p><a href="OsmanKarapinar.pdf" download>Download here my CV </a></p>
+                   
                 </div>
                 <div class="form-container">
                     <div class="form">
@@ -195,3 +206,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>
+<?php
+// Sluit de databaseverbinding
+$conn->close();
+?>

@@ -312,6 +312,7 @@ header {
     padding: 60px 0;
     background-color: #f5f5f5;
     text-align: center;
+    
 }
 
 #section-title {
@@ -329,6 +330,7 @@ header {
 .project {
     width: 250px; /* Pas de breedte aan naar je voorkeur */
     margin: 20px;
+    height: 474px;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -344,12 +346,18 @@ header {
 .project img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
+  
+}
+.project-3-foto {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 70px;
 }
 
 .project h3 {
     font-size: 20px;
     margin-bottom: 10px;
+
 }
 
 .project p {
@@ -451,7 +459,8 @@ header {
 @media (max-width: 767px) {
     .projects-container {
         flex-direction: column; /* Stapel de projecten op kleinere schermen zonder omkeren */
-        align-items: center; /* Projecten centreren op kleinere schermen */
+        align-items: center;
+         /* Projecten centreren op kleinere schermen */
     }
 }
 
