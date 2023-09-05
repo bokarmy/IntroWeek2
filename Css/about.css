@@ -129,80 +129,138 @@ nav {
         margin-right: 20px;
     }
 }
-.container {
-    position: relative;
-    max-width: 92rem;
-    padding: 0 4rem;
+.header-content {
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 20px 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.header-text {
+    flex: 1; 
+    padding-right: 20px; 
+}
+
+#header-title {
+    font-size: 3.6rem;
+}
+
+.header-circle img {
+    max-width: 40%; 
+    max-height: 40%; 
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125vh;
+    margin-top: -120px;
+    padding: 80px; /* Voeg wat ruimte toe rondom de inhoud */
 }
 
 .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex; /* Gebruik flexbox voor de kolommen */
+    justify-content: space-between; /* Verdeel de ruimte tussen kolommen */
     align-items: center;
-    justify-content: center;
+    flex-wrap: wrap; /* Laat de kolommen naar de volgende regel gaan als dat nodig is */
 }
 
-/* Header */
-header {
-    width: 100%;
-    background-color: var(--light-one);
-    overflow: hidden;
-    position: relative;
+.column-1 {
+    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+    max-width: 800px;
+    margin-right: 200px; /* Voeg wat ruimte tussen de kolommen toe */
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.title {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 1rem;
-    line-height: 1;
-    font-size: 2.8rem;
-    margin-bottom: 0.6rem;
-  }
-  .letters {
-    position: absolute;
-    width: 13.5%;
-    top: -5px;
-    left: 15px;
-    opacity: 0.06;
-}
-
-
-.header-content .container.grid-2 {
-    grid-template-columns: 2.5fr 3.5fr;
-    min-height: calc(100vh - 6rem);
-    padding-bottom: 2.5rem;
-    text-align: left;
-}
-
-.header-title {
-    font-size: 3.6rem;
-    line-height: 0.8;
-    color: var(--dark-one);
-}
-
-.header-content .text {
-    margin: 2.15rem 0;
-}
-.img-person1 {
-    width: 75%;
-    border-radius: 15px;
-}
 .column-2 {
-    display: flex;
-    justify-content: center;
-    margin-left: 8vh;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 60%;
+    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+    max-width: 520px; /* Pas aan naar je voorkeur */
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+.img-person1 {
+    max-width: 70%;
+    height: 350px;
+    border-radius: 90%;
+    margin-right: 30%;
+    margin-top: -55%;
+   
 }
 
 
+.skills {
+    margin-top: 30px;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333; /* Kleur voor de titel van de vaardigheden */
+}
+
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #666; /* Kleur voor de vaardigheden */
+}
+
+.skills li::before {
+    content: "\2022"; /* Voeg een bullet-puntje (•) toe voor elk item */
+    color: #ff9900; /* Kleur voor de bullet-puntjes */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.grid-2 .column-1 {
+    @media (max-width: 808px) {
+        flex: 100%; /* Maak de eerste kolom volledige breedte op kleinere schermen */
+        max-width: 100%; /* Maak de kolommen volledige breedte op kleinere schermen */
+        margin: 0; /* Verwijder marges om ruimte te besparen */
+        text-align: center; /* Centreer de tekst op kleinere schermen */
+    }
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
+        height: auto; /* Verwijder de vaste hoogte om inhoud aan te passen */
+        margin-top: 20px; /* Verminder de bovenmarge */
+        padding: 20px; /* Verminder de padding rondom de inhoud */
+    }
+
+    .grid-2 {
+        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
+    }
+
+    .column-1, .column-2 {
+        flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
+        max-width: 100%; /* Volledige breedte op kleinere schermen */
+        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
+        text-align: center; /* Centreer de tekst op kleinere schermen */
+    }
+
+    .img-person1 {
+        max-width: 0%; /* Volledige breedte op kleinere schermen */
+        height: auto; /* Behoud de beeldverhouding */
+        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
+    }
+
+    .skills {
+        margin-top: 20px; /* Voeg bovenmarge toe op kleinere schermen */
+    }
+}
 
 
 

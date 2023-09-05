@@ -25,9 +25,9 @@
             <span></span>
         </div>
         <ul class="menu">
-            <li><a href="../Root/index.html">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
+             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="project.php">Projects</a></li>
             <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
