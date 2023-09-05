@@ -11,7 +11,7 @@
 }
 
 html {
-
+    
 }
 
 body,
@@ -19,7 +19,6 @@ button,
 input,
 textarea {
     font-family: "Poppins", sans-serif;
-	 
    
 }
 
@@ -140,97 +139,120 @@ nav {
         margin-right: 20px;
     }
 }
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-}
 
-.contact {
-    margin-right: 20px;
+
+/* Header */
+header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    text-align: left; 
+    padding: 20vh 10%; 
     font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-}
-.subtext {
-    text-align: center;
-    margin-right: 18%;
-    margin-top: 10px;
+    font-size: 20px;
+    position: relative;
+    color: white;
 }
 
-.form-container {
+
+.highlight {
+    color: #ff9900; 
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 18px;
+    background-color: #302598; 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 60px;
+    transition: background-color 0.3s ease; 
+}
+
+.btn:hover {
+    background-color: #160c6f; 
+}
+
+/* Voeg deze stijlen toe aan je bestaande CSS of pas ze aan */
+.projects-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+	height: 90vh;
+    
+}
+
+#section-title {
+    font-size: 3.6rem;
+    margin-bottom: 30px;
+}
+
+.projects-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+	
+	
 }
 
-.form {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-}
-
-.form label,
-.form input,
-.form textarea {
-    display: block;
-    margin-bottom: -15px; /* Maak de afstand tussen labels en input/textarea kleiner */
-}
-
-.form input,
-.form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-@media (max-width: 767px) {
-    .container {
-        flex-direction: column; /* Stapel de elementen op elkaar */
-        height: auto; /* Laat de container zich aanpassen aan de inhoud */
-    }
-
-    .contact {
-        margin: 0; /* Verwijder de rechtermarge */
-        text-align: center; /* Centreer de tekst */
-        font-size: 1.5rem; /* Pas de tekstgrootte aan */
-    }
-
-    .subtext {
-        margin: 10px 0; /* Pas de marges aan voor de subtekst */
-    }
-
-    .form {
-        width: 100%; /* Maak het formulier volledig breed */
-    }
-}
-.email {
+.project {
+    width: 250px; /* Pas de breedte aan naar je voorkeur */
+    margin: 20px;
+    height: 474px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-right: 10vh;
-    font-size: 0.8rem; /* Pas de tekstgrootte aan */
-    margin-top: 10px; /* Voeg wat ruimte toe boven de e-mail */
+    padding: 20px;
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.project-info {
+    /* Voeg deze regels toe om de hoogte aan te passen aan de hoogste afbeelding */
+    height: 100%; /* Hiermee vullen de titels en omschrijvingen de volledige hoogte van het project in */
+}
+
+
+
+.project img {
+    max-width: 100%;
+    max-height: 210px; /* Stel de maximale hoogte in op 210 pixels */
+    width: auto;
+    height: auto;
+}
+
+
+
+.project h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.project p {
+    margin-bottom: 15px;
+  
+}
+
+.project a {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
 @media (max-width: 767px) {
-    /* Media query stijlen voor kleinere schermen */
-    .subtext {
-        font-size: 1rem; /* Pas de tekstgrootte aan */
-    }
-
-    .email {
-        font-size: 0.7rem; /* Pas de tekstgrootte aan */
+    .projects-container {
+        flex-direction: column; /* Stapel de projecten op kleinere schermen zonder omkeren */
+        align-items: center;
+         /* Projecten centreren op kleinere schermen */
     }
 }

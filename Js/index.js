@@ -114,4 +114,20 @@ const menuToggle = document.querySelector(".menu-toggle");
         },
         "retina_detect": true
       });
-     
+// Haal de huidige URL van de pagina op
+var currentUrl = window.location.href;
+
+// Zoek alle menu-items (de <li> elementen)
+var menuItems = document.querySelectorAll(".menu li");
+
+// Loop door de menu-items
+for (var i = 0; i < menuItems.length; i++) {
+    var menuItem = menuItems[i];
+    var menuItemLink = menuItem.querySelector("a");
+
+    // Controleer of de href van de link overeenkomt met de huidige URL
+    if (menuItemLink.href === currentUrl) {
+        // Voeg een actieve klasse toe aan het overeenkomende menu-item
+        menuItem.classList.add("active");
+    }
+}

@@ -1,4 +1,7 @@
+/* Globale stijlen */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
 *,
 *::before,
 *::after {
@@ -8,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    
 }
 
 body,
@@ -16,7 +19,8 @@ button,
 input,
 textarea {
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+	 overflow: hidden;
+   
 }
 
 a {
@@ -30,8 +34,7 @@ ul {
 img {
     width: 100%;
 }
-/* Globale stijlen */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 
 
 #particles-js {
@@ -43,6 +46,8 @@ img {
 
 /* Navigatiemenu */
 nav {
+   
+    top: 0;
     background-color: #333;
     color: white;
     display: flex;
@@ -50,14 +55,20 @@ nav {
     align-items: center;
     padding: 20px;
     font-family: "Poppins", sans-serif;
+  
 }
+.menu li.active a {
+    color: #FF0000; /* Pas de gewenste stijl aan */
+}
+
+
 
 /* Rest van de CSS-stijlen... */
 
 
 .logo img {
     max-width: 100px;
-    -webkit-filter: invert(100%); /* Safari/Chrome */
+    -webkit-filter: invert(100%); 
     filter: invert(100%);
 }
 
@@ -108,12 +119,12 @@ nav {
     }
 
     .menu li {
-        margin: 0;
+        margin: 00;
         padding: 10px 0;
     }
 
     .menu a {
-        color: rgb(255, 255, 255);
+        color: white;
         text-decoration: none;
         transition: color 0.3s ease; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
     }
@@ -261,16 +272,6 @@ nav {
         margin-top: 20px; /* Voeg bovenmarge toe op kleinere schermen */
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

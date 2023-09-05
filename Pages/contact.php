@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +26,7 @@
              <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="project.php">Projects</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li class="active"><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <?php
@@ -57,9 +55,7 @@
     <div class="container">
         <div class="contact">
             <h1>Contact Me !</h1>
-            <p class="subtext">Let's create something together 🤙
-                <p><a href="OsmanKarapinar.pdf" download>Here my CV (PDF)</a></p>
-            </p>
+            <p class="subtext">Let's create something together 🤙</p>
             <p class="email">📧 My Email: osmankarapinar68@gmail.com</p>
         </div>
         <div class="form-container">

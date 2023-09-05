@@ -13,12 +13,12 @@
 html {
     
 }
-
 body,
 button,
 input,
 textarea {
     font-family: "Poppins", sans-serif;
+	overflow: hidden;
    
 }
 
@@ -56,6 +56,11 @@ nav {
     font-family: "Poppins", sans-serif;
   
 }
+/* Stijl voor het actieve menu-item */
+.menu li.active a {
+    color: #FF0000; /* Pas de gewenste stijl aan */
+}
+
 
 
 /* Rest van de CSS-stijlen... */
@@ -117,6 +122,9 @@ nav {
         margin: 00;
         padding: 10px 0;
     }
+	  .menu a:hover {
+        color: #ff9900; /* Verander de kleur bij hover */
+    }
 
     .menu a {
         color: white;
@@ -124,9 +132,68 @@ nav {
         transition: color 0.3s ease; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
     }
 
-    .menu a:hover {
-        color: #ff9900; /* Verander de kleur bij hover */
+
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 20px;
     }
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #424141;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Voeg een subtiele schaduw toe */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 00;
+        padding: 10px 0;
+    }
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease; /* Voeg een overgang toe voor vloeiende kleurveranderingen */
+    }
+
+
 
     .menu-toggle {
         display: flex;
@@ -169,303 +236,46 @@ header {
 .btn:hover {
     background-color: #160c6f; 
 }
-
-  
-/* ... (bestaande stijlen) ... */
-
-/* Algemene stijlen voor de desktopweergave */
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-}
-
-.header-text {
-    flex: 1; 
-    padding-right: 20px; 
-}
-
-#header-title {
-    font-size: 3.6rem;
-}
-
-.header-circle img {
-    max-width: 40%; 
-    max-height: 40%; 
-    object-fit: cover;
-    border-radius: 10%;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 125vh;
-    margin-top: 60px;
-    padding: 80px; /* Voeg wat ruimte toe rondom de inhoud */
-}
-
-.grid-2 {
-    display: flex; /* Gebruik flexbox voor de kolommen */
-    justify-content: space-between; /* Verdeel de ruimte tussen kolommen */
-    align-items: center;
-    flex-wrap: wrap; /* Laat de kolommen naar de volgende regel gaan als dat nodig is */
-}
-
-.column-1 {
-    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
-    max-width: 800px;
-    margin-right: 200px; /* Voeg wat ruimte tussen de kolommen toe */
-}
-
-.column-2 {
-    flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
-    max-width: 520px; /* Pas aan naar je voorkeur */
-    margin-right: 15%;
-    margin-top: 5%;
-}
-
-.img-person1 {
-    max-width: 70%;
-    height: 350px;
-    border-radius: 90%;
-    margin-right: 30%;
-    margin-top: -55%;
-   
-}
-
-
-.skills {
-    margin-top: 30px;
-}
-
-.skills h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333; /* Kleur voor de titel van de vaardigheden */
-}
-
-.skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.skills li {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: #666; /* Kleur voor de vaardigheden */
-}
-
-.skills li::before {
-    content: "\2022"; /* Voeg een bullet-puntje (•) toe voor elk item */
-    color: #ff9900; /* Kleur voor de bullet-puntjes */
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-.grid-2 .column-1 {
-    @media (max-width: 808px) {
-        flex: 100%; /* Maak de eerste kolom volledige breedte op kleinere schermen */
-        max-width: 100%; /* Maak de kolommen volledige breedte op kleinere schermen */
-        margin: 0; /* Verwijder marges om ruimte te besparen */
-        text-align: center; /* Centreer de tekst op kleinere schermen */
-    }
-}
-
-/* Media query voor kleinere schermen */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
-        height: auto; /* Verwijder de vaste hoogte om inhoud aan te passen */
-        margin-top: 20px; /* Verminder de bovenmarge */
-        padding: 20px; /* Verminder de padding rondom de inhoud */
+    /* Verberg het standaardmenu */
+    .menu {
+        display: none;
     }
 
-    .grid-2 {
-        flex-direction: column; /* Stapel kolommen op in plaats van naast elkaar te plaatsen */
-    }
-
-    .column-1, .column-2 {
-        flex: 1; /* Neem zoveel mogelijk beschikbare ruimte in beslag */
-        max-width: 100%; /* Volledige breedte op kleinere schermen */
-        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
-        text-align: center; /* Centreer de tekst op kleinere schermen */
-    }
-
-    .img-person1 {
-        max-width: 0%; /* Volledige breedte op kleinere schermen */
-        height: auto; /* Behoud de beeldverhouding */
-        margin-right: 0; /* Verwijder de rechtermarge op kleinere schermen */
-    }
-
-    .skills {
-        margin-top: 20px; /* Voeg bovenmarge toe op kleinere schermen */
-    }
-}
-
-/* Voeg deze stijlen toe aan je bestaande CSS of pas ze aan */
-.projects-section {
-    padding: 60px 0;
-    background-color: #f5f5f5;
-    text-align: center;
-    
-}
-
-#section-title {
-    font-size: 3.6rem;
-    margin-bottom: 30px;
-}
-
-.projects-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.project {
-    width: 250px; /* Pas de breedte aan naar je voorkeur */
-    margin: 20px;
-    height: 474px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-
-.project img {
-    max-width: 100%;
-    height: auto;
-  
-}
-.project-3-foto {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 70px;
-}
-
-.project h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-
-}
-
-.project p {
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.project a {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    width: 100%;
-}
-
-.project a:hover {
-    background-color: #555;
-}
-.cont {
-    display: flex;
-    justify-content: center; /* Plaats de inhoud in het midden van het scherm */
-    align-items: flex-start;
-    flex-wrap: wrap; /* Wrap items als ze niet naast elkaar passen */
-}
-
-#contact {
-    flex: 1;
-    max-width: 400px; /* Beperk de maximale breedte van de contactsectie */
-    text-align: center; /* Center de tekst in de contactsectie */
-    margin-bottom: 20px; /* Voeg wat ruimte onder de contactsectie toe */
-    margin-top: 200px; /* Voeg wat ruimte boven de contactsectie toe */
-}
-
-
-.form-container {
-    flex: 1;
-    max-width: 400px;
-    margin-top: 50px;
-    margin-left: 80px; /* Beperk de maximale breedte van het formulier */
-}
-
-.form {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    padding: 10px; /* Verminder de padding om het formulier kleiner te maken */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px; /* Beperk de maximale breedte van het formulier */
-    max-height: 500px; /* Beperk de maximale hoogte van het formulier */
-    }
-
-
-    .form label,
-    .form input,
-    .form textarea {
-        display: block;
-        margin-bottom: 10px;
-    }
-    
-    .form .name-email,
-    .form .phone-company {
+    /* Toon het menu als het actief is */
+    .menu.active {
         display: flex;
-        justify-content: space-between;
-    }
-    
-    .form .name-email label,
-    .form .name-email input,
-    .form .phone-company label,
-    .form .phone-company input {
-        flex: 1;
-        margin: 0;
-    }
-    
-    .form input,
-    .form textarea {
+        flex-direction: column;
+        background-color: #424141;
+        position: absolute;
+        top: 80px;
+        right: 0;
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        text-align: center;
+        z-index: 1;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     }
-    
 
-.form input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+    /* Andere stijlaanpassingen voor het menu op kleinere schermen */
+    .menu li {
+        margin: 0;
+        padding: 10px 0;
+    }
 
-.form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
+    .menu a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: 18px; /* Pas de tekstgrootte aan */
+        line-height: 1.5; /* Pas de regelafstand aan */
+    }
 
-
-
-@media (max-width: 767px) {
-    .projects-container {
-        flex-direction: column; /* Stapel de projecten op kleinere schermen zonder omkeren */
-        align-items: center;
-         /* Projecten centreren op kleinere schermen */
+    /* Voeg een herkenbaar pictogram toe voor het menu */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 20px;
     }
 }
-
-
-/* ... (bestaande stijlen) ... */
-
-
-/* Voeg hier meer stijlen toe voor specifieke elementen en aanpassingen naar wens */
+  

@@ -22,7 +22,7 @@ $result = $conn->query($sql);
 <head>
     <title>Portfolio Osman Karapinar</title>
     <link rel="icon" href="../Images/logo.png">
-    <link rel="stylesheet" href="../Css/index.css">
+    <link rel="stylesheet" href="../Css/project.css">
     <style>
         
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -47,7 +47,7 @@ $result = $conn->query($sql);
         <ul class="menu">
             <li><a href="../index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="project.php">Projects</a></li>
+           <li class="active"><a href="project.php">Projects</a></li>
             <li><a href="contact.php">Contact</a></li>
         </ul>
         
@@ -65,21 +65,21 @@ $result = $conn->query($sql);
                             $projectDescription = $row["description"];
                             $projectLink = $row["link"];
         
-                            echo '<div class="project">';
-                            echo '<img src="' . $projectImage . '" alt="' . $projectTitle . '">';
-                            echo '<h3>' . $projectTitle . '</h3>';
-                            echo '<p>' . $projectDescription . '</p>';
-                            echo '<a href="' . $projectLink . '" target="_blank">Visit Project</a>';
-                            echo '</div>';
-                        }
-                    } else {
+                              echo '<div class="project">';
+                echo '<h3>' . $projectTitle . '</h3>'; // Projecttitel eerst
+                echo '<img src="' . $projectImage . '" alt="' . $projectTitle . '">'; // Daarna de foto
+                echo '<p>' . $projectDescription . '</p>';
+                echo '<a href="' . $projectLink . '" target="_blank">Visit Project</a>';
+                echo '</div>';
+            }
+        } else {
                         echo "No projects found in the database.";
                     }
                     ?>
                 </div>
             </section>
     <script src="../Js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   
 </body>
 </html>
 <?php
